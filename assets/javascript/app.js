@@ -29,7 +29,6 @@ $("#add-tv-show").on("click", function(event) {
     
 });
 
-
 function gifDisplay () {
     
         $("#gif-area").empty(); 
@@ -67,27 +66,35 @@ function gifDisplay () {
 
                 $("#gif-area").append(gifDiv);
 
-            } //put this in function 
-            $(".gif").on("click", function() {
-    
-                var state = $(this).attr("data-state");
-                console.log(state); 
-                
-                    if (state =="still") {
-                
-                        $(this).attr("src", $(this).attr("data-animate"));
-                        $(this).attr("data-state", "animate");
-                    }
-                    else {
-                
-                        $(this).attr("src", $(this).attr("data-still"));
-                        $(this).attr("data-state", "still"); 
-                
-                    }
-                
-            }); 
+            } 
+        
+            gifState(); 
     
     }); 
+}
+
+function gifState() {
+
+    $(".gif").on("click", function() {
+    
+        var state = $(this).attr("data-state");
+        console.log(state); 
+        
+        if (state =="still") {
+        
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+        }
+
+        else {
+
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still"); 
+        
+        }
+        
+    }); 
+
 }
 
 
