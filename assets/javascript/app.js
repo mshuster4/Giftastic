@@ -31,11 +31,11 @@ $("#add-tv-show").on("click", function(event) {
 
 function gifDisplay () {
     
-        $("#gif-area").empty(); 
+    $("#gif-area").empty(); 
 
-        var TVshow = $(this).attr("data-show"); 
+    var TVshow = $(this).attr("data-show"); 
 
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + TVshow + "&api_key=akphQCQZDm45wICT8Gm9w2S88I4FGIq2";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + TVshow + "&api_key=akphQCQZDm45wICT8Gm9w2S88I4FGIq2";
 
         $.ajax({
 
@@ -68,7 +68,7 @@ function gifDisplay () {
 
             } 
         
-            gifState(); 
+        gifState(); 
     
     }); 
 }
@@ -96,7 +96,6 @@ function gifState() {
     }); 
 
 }
-
 
 $(document).on("click", ".show", gifDisplay);
 
