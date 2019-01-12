@@ -1,6 +1,6 @@
 
-var TVshows = ["The Office", "Bob's Burgers", "The Simpsons", "Black Mirror", 
-                "30 Rock", "Arrested Developement", "Stranger Things", "Freaks and Geeks"];
+var TVshows = ["The Office", "Bob's Burgers", "The Simpsons", 
+                "Black Mirror", "Stranger Things", "Freaks and Geeks"];
 
 function renderButtons() {
 
@@ -9,10 +9,10 @@ function renderButtons() {
     for (var i = 0; i < TVshows.length; i++) {
 
         var showButton = $("<button>");
-        showButton.addClass("show");
+        showButton.addClass("show button btn btn-sm btn-primary");
         showButton.attr("data-show", TVshows[i]);
         showButton.text(TVshows[i]);
-        $("#buttons").append(showButton);
+        $("#buttons").append(showButton); 
 
     }
 
@@ -50,16 +50,18 @@ function gifDisplay () {
 
             for (var i = 0; i < 10; i++)  {
 
-                var gifDiv = $("<div>");
+                var gifDiv = $("<div class='col-sm-3'>");
                 var rating = giphs[i].rating;
                 var ratingText = $("<p>").text("Rating: " + rating);
                 var showImage = $("<img>");
 
-                showImage.attr("src", giphs[i].images.fixed_width_still.url);
-                showImage.attr("data-still", giphs[i].images.fixed_width_still.url);
-                showImage.attr("data-animate", giphs[i].images.fixed_width.url);
+                ratingText.addClass("text"); 
+                
+                showImage.attr("src", giphs[i].images.original_still.url);
+                showImage.attr("data-still", giphs[i].images.original_still.url);
+                showImage.attr("data-animate", giphs[i].images.original.url);
                 showImage.attr("data-state", "still"); 
-                showImage.addClass("gif");
+                showImage.addClass("gif img-fluid");
 
                 gifDiv.append(showImage);
                 gifDiv.append(ratingText);
