@@ -28,6 +28,10 @@ h1 {
     font-size: 8vw;
 }
 
+h5 {
+    text-align: center; 
+}
+
 
 #mainContainer{
     background-color: #3d3d3d;
@@ -43,19 +47,24 @@ h1 {
     box-shadow: 5px 5px 30px 5px grey;
 }
 
-.form {
-    margin-bottom: 50px; 
-}
-
-.submit-button {
+.add-button {
     background-color: #0013f4;
     border-color:  #0013f4;
+    margin-top: 10px; 
+}
+
+#addGifsButton {
+    margin-left: -5px; 
 }
 
 .button {
     margin-bottom: 15px; 
     background-color: #0013f4;
     border-color:  #0013f4;
+}
+
+#buttons {
+    margin-top: 50px; 
 }
 
 #buttons .btn{
