@@ -23,6 +23,7 @@ $("#add-tv-show").on("click", function(event) {
     event.preventDefault();
     var newTVshow = $("#tv-show-input").val().trim();
     TVshows.push(newTVshow);
+    $("#tv-show-input").val("")
 
     renderButtons(); 
 
@@ -30,7 +31,7 @@ $("#add-tv-show").on("click", function(event) {
 });
 
 function gifDisplay () {
-    
+
     $("#gif-area").empty(); 
 
     var TVshow = $(this).attr("data-show"); 
@@ -52,7 +53,7 @@ function gifDisplay () {
 
                 var gifDiv = $("<div class='col-sm-3'>");
                 var rating = giphs[i].rating;
-                var ratingText = $("<p>").text("Rating: " + rating);
+                var ratingText = $("<p>").html("<span class='rating-text'>" + rating.toUpperCase() + "</span>");
                 var showImage = $("<img>");
 
                 ratingText.addClass("text"); 
