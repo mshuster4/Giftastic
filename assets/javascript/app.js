@@ -24,7 +24,8 @@ $("#add-tv-show").on("click", function(event) {
 
     var newTVshow = $("#tv-show-input").val().trim();
 
-    if (TVshows.indexOf(newTVshow)=== -1){
+
+    if (TVshows.indexOf(newTVshow) === -1 && newTVshow !== "") {
 
     TVshows.push(newTVshow);
     renderButtons();
@@ -33,7 +34,7 @@ $("#add-tv-show").on("click", function(event) {
 
     else {
 
-        alert("Please type a different show"); 
+        alert("Invalid input.  Try again."); 
     }
 
 
@@ -68,18 +69,19 @@ function gifDisplay () {
                 var ratingText = $("<p>").html("Rating: " + "<span class='rating-text'>" + rating.toUpperCase() + "</span>");
                 ratingText.addClass("text"); 
                                 
-                var downloadButton = $("<a>").html("<i class='fa fa-download'></i>"); 
-                downloadButton.attr("href", giphs[i].images.original.url)
-                downloadButton.addClass("btn btn-primary btn-sm download-button"); 
-
-                ratingText.append(downloadButton); 
-
                 var showImage = $("<img>");
                 showImage.attr("src", giphs[i].images.original_still.url);
                 showImage.attr("data-still", giphs[i].images.original_still.url);
                 showImage.attr("data-animate", giphs[i].images.original.url);
                 showImage.attr("data-state", "still"); 
                 showImage.addClass("gif img-fluid");
+
+                var downloadButton = $("<a>").html("<i class='fa fa-download'></i>"); 
+                downloadButton.attr({href: giphs[i].images.original.mp4, 
+                                     download: " "});
+                downloadButton.addClass("btn btn-primary btn-sm download-button"); 
+
+                ratingText.append(downloadButton);
 
                 gifDiv.append(showImage);
                 gifDiv.append(ratingText);
@@ -99,13 +101,6 @@ function gifDisplay () {
                     var rating = giphs[i].rating;
                     var ratingText = $("<p>").html("Rating: " + "<span class='rating-text'>" + rating.toUpperCase() + "</span>");
                     ratingText.addClass("text"); 
-                                
-                    var downloadButton = $("<a>").html("<i class='fa fa-download'></i>"); 
-                    downloadButton.attr("href", giphs[i].images.original.url);
-                    downloadButton.attr("download", "gip.mp4");
-                    downloadButton.addClass("btn btn-primary btn-sm download-button"); 
-
-                    ratingText.append(downloadButton); 
 
                     var showImage = $("<img>");
                     showImage.attr("src", giphs[i].images.original_still.url);
@@ -113,6 +108,18 @@ function gifDisplay () {
                     showImage.attr("data-animate", giphs[i].images.original.url);
                     showImage.attr("data-state", "still"); 
                     showImage.addClass("gif img-fluid");
+
+                    var downloadButton = $("<a>").html("<i class='fa fa-download'></i>"); 
+                    downloadButton.attr({href: giphs[i].images.original.mp4, 
+                                         download: " "});
+                    downloadButton.addClass("btn btn-primary btn-sm download-button"); 
+    
+                    ratingText.append(downloadButton);
+    
+                    gifDiv.append(showImage);
+                    gifDiv.append(ratingText);
+    
+                    $("#gif-area").append(gifDiv);
 
                     gifDiv.append(showImage);
                     gifDiv.append(ratingText);
@@ -122,18 +129,11 @@ function gifDisplay () {
 
                 }
 
+                gifState(); 
+
             });
             
-    
-            $(".download-button").on("click", function() {
 
-                 downloadlink = $(this).attr("href", $(this).attr("download")); 
-
-
-            });
-
- 
-        
         gifState(); 
     
     }); 
@@ -144,7 +144,6 @@ function gifState() {
     $(".gif").on("click", function() {
     
         var state = $(this).attr("data-state");
-        console.log(state); 
         
         if (state =="still") {
         
