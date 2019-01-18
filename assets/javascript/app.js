@@ -127,7 +127,7 @@ function gifDisplay () {
     
             $(".download-button").on("click", function() {
 
-                 var downloadlink = $(this).attr("href", $(this).attr("download")); 
+                 downloadlink = $(this).attr("href", $(this).attr("download")); 
 
 
             });
