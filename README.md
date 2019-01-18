@@ -1,5 +1,4 @@
 # TV Giftastic
 App 
 
-![Image of Homepage]
-(assets/images/TV-Giphtastic-blank.png)
+![Image of Homepage](https://raw.github.com/mshuster04/Giftastic/master/assets/images/TV-Giphtastic-blank.png)
