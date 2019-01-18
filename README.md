@@ -2,5 +2,4 @@
 App 
 
 ![Image of Homepage]
-(assets/images/TV-Giphtastic-blank.png)
-
+(/Giftastic/assets/images/TV-Giphtastic-blank.png)
