@@ -1,2 +1,6 @@
-# Giftastic
-Giph App using Giphy API 
+# TV Giftastic
+App 
+
+![Image of Homepage]
+(assets/images/TV-Giphtastic-blank.png)
+
