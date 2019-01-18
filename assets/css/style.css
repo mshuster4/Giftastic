@@ -53,7 +53,7 @@ h5 {
     box-shadow: 5px 5px 30px 5px grey;
 }
 
-.add-button:hover {
+.button:hover {
     background-color: #ff02ff; 
 }
 
@@ -63,6 +63,10 @@ h5 {
     margin-top: 10px; 
 }
 
+.add-button:hover {
+    background-color: #ff02ff;
+}
+
 #addGifsButton {
     margin-left: -5px; 
 }
@@ -70,9 +74,25 @@ h5 {
 .button {
     margin-bottom: 15px; 
     background-color: #0013f4;
-    border-color:  #0013f4;
+    border-color:  #0013f4
 }
 
+.download-button {
+    background-color: #0013f4;
+    border-color:  #0013f4;
+    color: white; 
+    padding: 1px;
+    float: right;
+}
+
+.download-button:hover {
+    background-color: #ff02ff; 
+}
+
+.show:focus, .download-button:focus, .add-button:focus{
+    outline:none;
+    box-shadow: none; 
+}
 
 .show:hover{
     background-color:#02fe00;
@@ -97,8 +117,8 @@ h5 {
 }
 
 .text {
-    text-align: center; 
-    margin-top: 5px; 
+    text-align: left; 
+    margin-top: 5px;  
 }
 
 .rating-text {
@@ -106,7 +126,7 @@ h5 {
     border-color: white;
     border-width: 1px;
     font-size: 18px;
-    background-color: black
+    background-color: black;
 }
 
 @media only screen and (max-width: 600px) {

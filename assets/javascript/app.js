@@ -24,7 +24,7 @@ $("#add-tv-show").on("click", function(event) {
 
     var newTVshow = $("#tv-show-input").val().trim();
 
-    if (TVshows.indexOf(newTVshow)=== -1) {
+    if (TVshows.indexOf(newTVshow)=== -1){
 
     TVshows.push(newTVshow);
     renderButtons();
@@ -63,13 +63,18 @@ function gifDisplay () {
 
             for (var i = 0; i < 10; i++)  {
 
-                var gifDiv = $("<div class='col-sm-3'>");
+                var gifDiv = $("<div class='col-sm-4'>");
                 var rating = giphs[i].rating;
                 var ratingText = $("<p>").html("Rating: " + "<span class='rating-text'>" + rating.toUpperCase() + "</span>");
-                var showImage = $("<img>");
-
                 ratingText.addClass("text"); 
-                
+                                
+                var downloadButton = $("<a>").html("<i class='fa fa-download'></i>"); 
+                downloadButton.attr("href", giphs[i].images.original.url)
+                downloadButton.addClass("btn btn-primary btn-sm download-button"); 
+
+                ratingText.append(downloadButton); 
+
+                var showImage = $("<img>");
                 showImage.attr("src", giphs[i].images.original_still.url);
                 showImage.attr("data-still", giphs[i].images.original_still.url);
                 showImage.attr("data-animate", giphs[i].images.original.url);
@@ -81,6 +86,7 @@ function gifDisplay () {
 
                 $("#gif-area").append(gifDiv);
 
+
             } 
 
             $("#addGifsButton").on("click", function() {
@@ -89,13 +95,19 @@ function gifDisplay () {
 
                 for (var i = 0; i < 20; i++) {
 
-                    var gifDiv = $("<div class='col-sm-3'>");
+                    var gifDiv = $("<div class='col-sm-4'>");
                     var rating = giphs[i].rating;
                     var ratingText = $("<p>").html("Rating: " + "<span class='rating-text'>" + rating.toUpperCase() + "</span>");
-                    var showImage = $("<img>");
-
                     ratingText.addClass("text"); 
-                
+                                
+                    var downloadButton = $("<a>").html("<i class='fa fa-download'></i>"); 
+                    downloadButton.attr("href", giphs[i].images.original.url);
+                    downloadButton.attr("download", "gip.mp4");
+                    downloadButton.addClass("btn btn-primary btn-sm download-button"); 
+
+                    ratingText.append(downloadButton); 
+
+                    var showImage = $("<img>");
                     showImage.attr("src", giphs[i].images.original_still.url);
                     showImage.attr("data-still", giphs[i].images.original_still.url);
                     showImage.attr("data-animate", giphs[i].images.original.url);
@@ -110,7 +122,16 @@ function gifDisplay () {
 
                 }
 
-            }); 
+            });
+            
+    
+            $(".download-button").on("click", function() {
+
+                 var downloadlink = $(this).attr("href", $(this).attr("download")); 
+
+
+            });
+
  
         
         gifState(); 
