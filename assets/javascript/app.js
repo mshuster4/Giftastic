@@ -77,7 +77,8 @@ function gifDisplay () {
                 showImage.addClass("gif img-fluid");
 
                 var downloadButton = $("<a>").html("<i class='fa fa-download'></i>"); 
-                downloadButton.attr({href: giphs[i].images.original.mp4, 
+                downloadButton.attr({href: giphs[i].images.original.mp4,
+                                     target: "_blank", 
                                      download: " "});
                 downloadButton.addClass("btn btn-primary btn-sm download-button"); 
 
@@ -111,6 +112,7 @@ function gifDisplay () {
 
                     var downloadButton = $("<a>").html("<i class='fa fa-download'></i>"); 
                     downloadButton.attr({href: giphs[i].images.original.mp4, 
+                                         target: "_blank",
                                          download: " "});
                     downloadButton.addClass("btn btn-primary btn-sm download-button"); 
     
