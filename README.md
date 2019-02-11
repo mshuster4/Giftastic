@@ -1,5 +1,5 @@
 # TV Giftastic
-A TV themed Gif generating App created by Marguertite Shuster
+A TV themed Gif generating App.
 
 ## Getting Started
 * Users can either click on a provided button or use the input box to create their own button with a TV show of their choice.

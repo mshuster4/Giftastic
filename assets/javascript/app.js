@@ -55,6 +55,7 @@ function gifDisplay () {
 
         url: queryURL,
         method: "GET"
+        
         })
             .then(function(response) {
 
